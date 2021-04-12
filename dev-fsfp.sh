@@ -7,4 +7,4 @@ set -e
 
 rm -rf ./dev-fsfp
 
-cookiecutter --config-file ./full-stack-fastapi-postgresql/dev-fsfp-config.yml --no-input -f ./full-stack-fastapi-postgresql
+cookiecutter --config-file ./full-stack-fastapi-sqlite/dev-fsfp-config.yml --no-input -f ./full-stack-fastapi-sqlite

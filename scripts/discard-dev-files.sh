@@ -10,5 +10,3 @@ git checkout \{\{cookiecutter.project_slug\}\}/env-backend.env
 git checkout \{\{cookiecutter.project_slug\}\}/env-flower.env
 git checkout \{\{cookiecutter.project_slug\}\}/.env
 git checkout \{\{cookiecutter.project_slug\}\}/frontend/.env
-git checkout \{\{cookiecutter.project_slug\}\}/env-pgadmin.env
-git checkout \{\{cookiecutter.project_slug\}\}/env-postgres.env

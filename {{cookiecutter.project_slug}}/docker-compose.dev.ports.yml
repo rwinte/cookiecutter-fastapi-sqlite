@@ -1,8 +1,5 @@
 version: '3.3'
 services:
-  pgadmin:
-    ports:
-      - '5050:5050'
   proxy:
     ports:
       - '80:80'

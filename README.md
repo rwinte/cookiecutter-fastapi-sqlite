@@ -1,4 +1,4 @@
-# Full Stack FastAPI and PostgreSQL - Base Project Generator
+# Full Stack FastAPI and SQLite - Base Project Generator
 
 [![Build Status](https://travis-ci.org/tiangolo/full-stack-fastapi-postgresql.svg?branch=master)](https://travis-ci.org/tiangolo/full-stack-fastapi-postgresql)
 
@@ -61,7 +61,6 @@ Generate a backend and frontend stack using Python, including interactive API do
     * Docker multi-stage building, so you don't need to save or commit compiled code.
     * Frontend tests ran at build time (can be disabled too).
     * Made as modular as possible, so it works out of the box, but you can re-generate with Vue CLI or create it as you need, and re-use what you want.
-* **PGAdmin** for PostgreSQL database, you can modify it to use PHPMyAdmin and MySQL easily.
 * **Flower** for Celery jobs monitoring.
 * Load balancing between frontend and backend with **Traefik**, so you can have both under the same domain, separated by path, but served by different containers.
 * Traefik integration, including Let's Encrypt **HTTPS** certificates automatic generation.
@@ -111,10 +110,6 @@ The input variables, with their default values (some auto generated) are:
 * `smtp_user`: The user to use in the SMTP connection. The value will be given by your email provider.
 * `smtp_password`: The password to be used in the SMTP connection. The value will be given by the email provider.
 * `smtp_emails_from_email`: The email account to use as the sender in the notification emails, it would be something like `info@your-custom-domain.com`.
- 
-* `postgres_password`: Postgres database password. Use the method above to generate it. (You could easily modify it to use MySQL, MariaDB, etc).
-* `pgadmin_default_user`: PGAdmin default user, to log-in to the PGAdmin interface.
-* `pgadmin_default_user_password`: PGAdmin default user password. Generate it with the method above.
  
 * `traefik_constraint_tag`: The tag to be used by the internal Traefik load balancer (for example, to divide requests between backend and frontend) for production. Used to separate this stack from any other stack you might have. This should identify each stack in each environment (production, staging, etc).
 * `traefik_constraint_tag_staging`: The Traefik tag to be used while on staging. 

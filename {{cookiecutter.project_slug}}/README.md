@@ -27,8 +27,6 @@ Automatic interactive documentation with Swagger UI (from the OpenAPI backend): 
 
 Alternative automatic documentation with ReDoc (from the OpenAPI backend): http://localhost/redoc
 
-PGAdmin, PostgreSQL web administration: http://localhost:5050
-
 Flower, administration of Celery tasks: http://localhost:5555
 
 Traefik UI, to see how the routes are being handled by the proxy: http://localhost:8090
@@ -637,7 +635,7 @@ The purpose of each Docker Compose file is:
 * `docker-compose.dev.networks.yml`: local development networks, to enable interactively talking to the backend.
 * `docker-compose.dev.ports.yml`: local development port mappings.
 * `docker-compose.dev.volumes.yml`: local development mounted volumes, mainly to map the development code directory inside the container, for fast development without needing to re-build the images.
-* `docker-compose.shared.admin.yml`: additional services for administration or utilities with their configurations, like PGAdmin and Swagger, that are not needed during testing and use external images (don't need to be built or create images).
+* `docker-compose.shared.admin.yml`: additional services for administration or utilities with their configurations, like Swagger, that are not needed during testing and use external images (don't need to be built or create images).
 * `docker-compose.shared.base-images.yml`: base Docker images used without modification for shared services, as databases. Used in deployment, development, testing, etc.
 * `docker-compose.shared.depends.yml`: dependencies between main services with `depends_on`, used in deployment, development, testing, etc.
 * `docker-compose.shared.env.yml`: environment variables used by services, as database passwords, secret keys, etc.
@@ -659,8 +657,6 @@ Automatic Interactive Docs (Swagger UI): https://{{cookiecutter.domain_main}}/do
 
 Automatic Alternative Docs (ReDoc): https://{{cookiecutter.domain_main}}/redoc
 
-PGAdmin: https://pgadmin.{{cookiecutter.domain_main}}
-
 Flower: https://flower.{{cookiecutter.domain_main}}
 
 ### Staging
@@ -675,8 +671,6 @@ Automatic Interactive Docs (Swagger UI): https://{{cookiecutter.domain_staging}}
 
 Automatic Alternative Docs (ReDoc): https://{{cookiecutter.domain_staging}}/redoc
 
-PGAdmin: https://pgadmin.{{cookiecutter.domain_staging}}
-
 Flower: https://flower.{{cookiecutter.domain_staging}}
     
 ### Development
@@ -690,8 +684,6 @@ Backend: http://localhost/api/
 Automatic Interactive Docs (Swagger UI): https://localhost/docs
 
 Automatic Alternative Docs (ReDoc): https://localhost/redoc
-
-PGAdmin: http://localhost:5050
 
 Flower: http://localhost:5555
 
@@ -709,8 +701,6 @@ Automatic Interactive Docs (Swagger UI): https://local.dockertoolbox.tiangolo.co
 
 Automatic Alternative Docs (ReDoc): https://local.dockertoolbox.tiangolo.com/redoc
 
-PGAdmin: http://local.dockertoolbox.tiangolo.com:5050
-
 Flower: http://local.dockertoolbox.tiangolo.com:5555
 
 Traefik UI: http://local.dockertoolbox.tiangolo.com:8090
@@ -726,8 +716,6 @@ Backend: http://dev.{{cookiecutter.domain_main}}/api/
 Automatic Interactive Docs (Swagger UI): https://dev.{{cookiecutter.domain_main}}/docs
 
 Automatic Alternative Docs (ReDoc): https://dev.{{cookiecutter.domain_main}}/redoc
-
-PGAdmin: http://dev.{{cookiecutter.domain_main}}:5050
 
 Flower: http://dev.{{cookiecutter.domain_main}}:5555
 
@@ -745,26 +733,24 @@ Automatic Interactive Docs (Swagger UI): https://localhost.tiangolo.com/docs
 
 Automatic Alternative Docs (ReDoc): https://localhost.tiangolo.com/redoc
 
-PGAdmin: http://localhost.tiangolo.com:5050
-
 Flower: http://localhost.tiangolo.com:5555
 
 Traefik UI: http://localhost.tiangolo.com:8090
 
 ## Project generation and updating, or re-generating
 
-This project was generated using https://github.com/tiangolo/full-stack-fastapi-postgresql with:
+This project was generated using https://github.com/tiangolo/full-stack-fastapi-sqlite with:
 
 ```bash
 pip install cookiecutter
-cookiecutter https://github.com/tiangolo/full-stack-fastapi-postgresql
+cookiecutter https://github.com/rwinte/full-stack-fastapi-sqlite
 ```
 
 You can check the variables used during generation in the file `cookiecutter-config-file.yml`.
 
 You can generate the project again with the same configurations used the first time.
 
-That would be useful if, for example, the project generator (`tiangolo/full-stack-fastapi-postgresql`) was updated and you want to integrate or review the changes.
+That would be useful if, for example, the project generator (`rwinte/full-stack-fastapi-sqlite`) was updated and you want to integrate or review the changes.
 
 You could generate a new project with the same configurations as this one in a parallel directory. And compare the differences between the two, without having to overwrite your current code but being able to use the same variables used for your current project.
 
@@ -775,7 +761,7 @@ You can use that file while generating a new project to reuse all those variable
 For example, run:
 
 ```bash
-cookiecutter --config-file ./cookiecutter-config-file.yml --output-dir ../project-copy https://github.com/tiangolo/full-stack-fastapi-postgresql
+cookiecutter --config-file ./cookiecutter-config-file.yml --output-dir ../project-copy https://github.com/rwinte/full-stack-fastapi-sqlite
 ```
 
 That will use the file `cookiecutter-config-file.yml` in the current directory (in this project) to generate a new project inside a sibling directory `project-copy`.

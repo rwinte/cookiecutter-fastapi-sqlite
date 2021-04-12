@@ -7,7 +7,6 @@ services:
     command: bash -c "while true; do sleep 1; done"
     env_file:
       - env-backend.env
-      - env-postgres.env
     environment:
       - SERVER_NAME=backend
   backend:

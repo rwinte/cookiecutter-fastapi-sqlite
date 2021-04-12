@@ -28,7 +28,6 @@ emails = "*"
 raven = "*"
 gunicorn = "*"
 jinja2 = "*"
-psycopg2-binary = "*"
 alembic = "*"
 sqlalchemy = "*"
 

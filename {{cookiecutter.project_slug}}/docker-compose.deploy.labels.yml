@@ -1,18 +1,5 @@
 version: '3.3'
 services:
-  pgadmin:
-    deploy:
-      labels:
-        - traefik.frontend.rule=Host:pgadmin.${DOMAIN}
-        - traefik.enable=true
-        - traefik.port=5050
-        - traefik.tags=${TRAEFIK_PUBLIC_TAG}
-        - traefik.docker.network=${TRAEFIK_PUBLIC_NETWORK}
-        # Traefik service that listens to HTTP
-        - traefik.redirectorservice.frontend.entryPoints=http
-        - traefik.redirectorservice.frontend.redirect.entryPoint=https
-        # Traefik service that listens to HTTPS
-        - traefik.webservice.frontend.entryPoints=https
   proxy:
     deploy:
       labels:
